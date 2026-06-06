@@ -29,6 +29,6 @@ class GroupController extends Controller
         $conversation->users()->attach($request->users);
         $conversation->users()->attach(auth()->id());
 
-        return back()->with('success', 'Group berhasil dibuat');
+        return redirect()->route('chat')->with('success', 'Group berhasil dibuat');
     }
 }

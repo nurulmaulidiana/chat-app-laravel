@@ -78,13 +78,20 @@
 
         <div class="divider"></div>
 
-        <div class="sidebar-section-title">👥 Groups</div>
-        @foreach($groups as $group)
-            <a href="{{ route('chat.group', $group->id) }}"
-               class="{{ isset($id) && $isGroup && $id == $group->id ? 'active' : '' }}">
-                <div>{{ $group->name }}</div>
-            </a>
-        @endforeach
+<div class="sidebar-section-title">👥 Groups</div>
+
+<a href="{{ url('/group/create') }}">
+    <div style="color:#1D9E75; font-weight:bold;">
+        + Tambah Grup
+    </div>
+</a>
+
+@foreach($groups as $group)
+    <a href="{{ route('chat.group', $group->id) }}"
+       class="{{ isset($id) && $isGroup && $id == $group->id ? 'active' : '' }}">
+        <div>{{ $group->name }}</div>
+    </a>
+@endforeach
     </div>
 
     <!-- CHAT AREA -->

@@ -24,6 +24,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/group/create', [GroupController::class, 'index']);
     Route::post('/group/store', [GroupController::class, 'store']);
+    Route::delete('/group/{id}', [GroupController::class, 'destroy'])->name('group.destroy');
 });
 
 require __DIR__.'/auth.php';
